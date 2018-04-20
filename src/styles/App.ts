@@ -1,12 +1,20 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 
-const container: ViewStyle = {
-	flex: 1,
-	backgroundColor: '#fff',
-	alignItems: 'center',
-	justifyContent: 'center',
-};
+interface Mods {
+	dark?: boolean
+}
 
-export default StyleSheet.create({
-	container,
-});
+function container(mods: Mods): ViewStyle {
+	return {
+		flex: 1,
+		backgroundColor: mods.dark ? '#333' : '#fff',
+		alignItems: 'center',
+		justifyContent: 'center',
+	};
+}
+
+export default function createAppStyles(mods: Mods = {}) {
+	return StyleSheet.create({
+		container: container(mods),
+	});
+}
