@@ -1,1 +1,1 @@
-export { default } from './src/containers/App';
+export { default } from './src/components/App';
