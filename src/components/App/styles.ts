@@ -1,20 +1,10 @@
-import { StyleSheet, ViewStyle } from 'react-native';
+import glamorous from 'glamorous-native';
 
-interface Mods {
-	dark?: boolean
-}
+import { AppProps } from './';
 
-function container(mods: Mods): ViewStyle {
-	return {
-		flex: 1,
-		backgroundColor: mods.dark ? '#333' : '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	};
-}
-
-export default function createAppStyles(mods: Mods = {}) {
-	return StyleSheet.create({
-		container: container(mods),
-	});
-}
+export const CenterView = glamorous.view<AppProps>((props) => ({
+	flex: 1,
+	backgroundColor: props.dark ? '#333' : '#fff',
+	alignItems: 'center',
+	justifyContent: 'center',
+}));
