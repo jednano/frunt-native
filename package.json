@@ -46,13 +46,15 @@
       "^.+\\.tsx?$": "ts-jest"
     },
     "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|glamorous-native)"
+      "node_modules/(?!(jest-)?react-native|react-navigation|glamorous-native)"
     ]
   },
   "dependencies": {
+    "@types/react-navigation": "^1.5.7",
     "expo": "^26.0.0",
     "glamorous-native": "^1.4.0",
     "react": "16.3.0-alpha.1",
-    "react-native": "0.54.0"
+    "react-native": "0.54.0",
+    "react-navigation": "^1.5.11"
   }
 }
