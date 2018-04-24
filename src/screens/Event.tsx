@@ -1,31 +1,33 @@
 import * as React from 'react';
-import { Button } from 'react-native';
-import { NavigationScreenProps } from 'react-navigation';
+import { Button, Text, View } from 'react-native';
 
-export interface EventScreenProps extends NavigationScreenProps {
+import BaseScreen from './Base';
+
+interface EventScreenProps {
 	/**
 	 * Event id
 	 */
 	id: string;
 }
 
-export default class EventScreen extends React.Component<EventScreenProps> {
+export default class EventScreen extends BaseScreen<EventScreenProps> {
 
 	render() {
 		const {
-			id,
-			navigation: { navigate },
+			navigation,
 		} = this.props;
 		return (
-			<React.Fragment>
-				Event ID: {id}
+			<View>
+				<Text>
+					Event ID: {navigation.getParam('id')}
+				</Text>
 				<Button
 					title="Go to Events"
 					onPress={() =>
-						navigate('Events')
+						navigation.navigate('Events')
 					}
 				/>
-			</React.Fragment>
+			</View>
 		);
 	}
 }
