@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Button } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
 
-interface EventScreenProps extends NavigationScreenProps {
+export interface EventScreenProps extends NavigationScreenProps {
 	/**
 	 * Event id
 	 */
@@ -10,10 +10,6 @@ interface EventScreenProps extends NavigationScreenProps {
 }
 
 export default class EventScreen extends React.Component<EventScreenProps> {
-
-	static navigationOptions = {
-		title: 'Event',
-	};
 
 	render() {
 		const {

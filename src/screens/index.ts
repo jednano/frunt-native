@@ -6,8 +6,8 @@ import Events from './Events';
 export default StackNavigator(
 	{
 		Event: {
-			navigationOptions: ({ navigation }: NavigationTransitionProps) => ({
-				title: `Event ${(navigation.state as any).params.id}`,
+			navigationOptions: ({ navigation }: any) => ({
+				title: `Event ${navigation.state.params.id}`,
 			}),
 			screen: Event,
 		},
